@@ -1,0 +1,22 @@
+{
+  "name": "csv-to-json-parser",
+  "version": "1.0.0",
+  "description": "Task 1 for node.js course",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "csv",
+    "json",
+    "parser"
+  ],
+  "author": "Vladislav Bougelsvky",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "googleapis": "^118.0.0",
+    "linebreak": "^1.1.0",
+    "minimist": "^1.2.8"
+  }
+}
