@@ -1,5 +1,5 @@
 {
-  "name": "csv-to-json-parser",
+  "name": "csv-to-json-parser-bogulevsky",
   "version": "1.0.0",
   "description": "Task 1 for node.js course",
   "main": "index.js",
@@ -18,5 +18,14 @@
     "googleapis": "^118.0.0",
     "linebreak": "^1.1.0",
     "minimist": "^1.2.8"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vladislav0101/node_js_task_1_csv_converter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Vladislav0101/node_js_task_1_csv_converter/issues"
+  },
+  "homepage": "https://github.com/Vladislav0101/node_js_task_1_csv_converter#readme"
 }
