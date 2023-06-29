@@ -1,11 +1,15 @@
 const readline = require("readline");
 
+const getSeparatorFromCsv = require("../utilities/getSeparatorFromCsv");
 const lineConverter = require("../utilities/lineConverter");
+
+const COMMA = ",";
 
 function createReadlineStream(readingStream, writingStream, separator) {
   let globalIsTemplateReady = false;
   let globalTemplateKeys = [];
   let separatorForJson = "";
+  let separatorFromCsv = null;
 
   const rl = readline.createInterface({
     input: readingStream,
@@ -13,9 +17,11 @@ function createReadlineStream(readingStream, writingStream, separator) {
   });
 
   rl.on("line", (csvLine) => {
+    if (!separatorFromCsv) separatorFromCsv = getSeparatorFromCsv(csvLine);
+
     const { set, isTemplateReady, templateKeys } = lineConverter({
       csvLine,
-      separator,
+      separator: separatorFromCsv,
       isTemplateReady: globalIsTemplateReady,
       templateKeys: globalTemplateKeys,
     });
@@ -25,7 +31,7 @@ function createReadlineStream(readingStream, writingStream, separator) {
       globalTemplateKeys = templateKeys;
     } else {
       writingStream.write(separatorForJson + JSON.stringify(set));
-      separatorForJson = ",";
+      separatorForJson = COMMA;
     }
   });
 

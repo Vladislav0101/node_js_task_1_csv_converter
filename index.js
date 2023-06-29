@@ -12,7 +12,10 @@ const {
   googleDriveRefreshToken,
 } = require("./utilities/getEnv.js");
 
-const { sourceFile, separator, resultFile } = getArguments();
+const arguments = getArguments();
+if (!arguments) return;
+
+const { sourceFile, separator, resultFile } = arguments;
 
 const finalPath = path.resolve(__dirname, resultFile);
 
