@@ -1,8 +1,6 @@
-const defaultSeparator = ",";
-
 function converter({
   csvLine,
-  separator = defaultSeparator,
+  separator,
   isTemplateReady = false,
   templateKeys = [],
 }) {
